@@ -1,0 +1,12 @@
+{
+  "name": "api_rest_graphql_clean_architecture",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/KPMGE/rest_graphql_api_clean_architecture.git",
+  "author": "KPMGE <jesuskevin254@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.2"
+  }
+}
