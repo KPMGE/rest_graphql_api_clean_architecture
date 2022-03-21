@@ -16,12 +16,12 @@ into layers, where each layer has a very straightforward goal.
 > NOTE: Each layer has its own README explaining its purpose in more detail, you can go and check them out. But, I'll explain briefly each layer now
 
 
-#### Domain
+### Domain
 The domain is the core of our program, we will be adding our entities and interfaces for useCases there. This layer 
 knows nothing about the other layers. More specifically, the other layers manage this layer.
 
 
-#### Data
+### Data
 The data layer is where we will be storing our business rules, there you'll find the concrete implementation 
 for useCases that i like to call __services__. An important point here, is that, our services don't depend on 
 any external agent like databases for example. In order to achieve such a level of decoupling we need to apply 
@@ -37,7 +37,7 @@ in which we describe the output of our useCase for example. This is gonna protec
 our domain.
 
 
-#### Infra
+### Infra
 The infrastructure layer is where we talk to the outside world to provide some feature. Usually, the concrete 
 implementation for our database provider that, normally i call __repository__ will be find. Once again, here
 we can have as many implementation as we want. This is a killer feature, because we don't even need a real 
@@ -47,16 +47,20 @@ everything is gonna work as expected. Later on, adapt a real database is as simp
 implements the same interface and passing it to the service instead of the fake one.
 
 
-#### Presentation
+### Presentation
 Here is the place where we talk to the outside wold by calling the concrete implementations of our useCases. 
 Usually we'll do that through a Http Request in a controller, but a really good practice is create our own http-like request and 
 response and deal with those entities instead of dependency on express for example. This is gonna allow us use the controller 
 independently of the provider. We could use the same controller for a REST api and a GraphQL one for example, and in fact that's precisely what we do in this api.
 
 
-#### Main
+### Main
 The main layer is where the coupling lives. Here, we will instantiate the concrete classed and assemble our application
 to be either a REST or a GraphQL api or, in our case, both!
 
 Another good practice is applying some design patterns here, like factories and adapters to make our code more 
 readable and extensible.
+
+
+
+> this design was inspired by [Rodrigo Manguinho e Rodrigo Branas](https://youtu.be/P0gpCCA8ZPs). TYSM 
