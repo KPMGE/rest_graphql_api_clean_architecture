@@ -39,12 +39,12 @@ our domain.
 
 ### Infra
 The infrastructure layer is where we talk to the outside world to provide some feature. Usually, the concrete 
-implementation for our database provider that, normally i call __repository__ will be find. Once again, here
-we can have as many implementation as we want. This is a killer feature, because we don't even need a real 
+implementation for our database provider that, normally i call __repository__ will be found. Once again, here
+we can have as many implementations as we want. This is a killer feature, because we don't even need a real 
 database when developing our application. We can create a class in memory that implements the interface of the 
-repository and pass it to the service. And, as long as our fake repository implements all the interface methods, 
-everything is gonna work as expected. Later on, adapt a real database is as simple as creating another class that
-implements the same interface and passing it to the service instead of the fake one.
+repository and passes it to the service. And, as long as our fake repository implements all the interface methods, 
+everything is going to work as expected. Later on, adapting a real database is as simple as creating another class that
+implements the same interface and pass it to the service instead of the fake one.
 
 
 ### Presentation
